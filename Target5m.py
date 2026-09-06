@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Decode By DEEP-XD         
 import lzma
 import zlib
@@ -22,7 +23,36 @@ from concurrent.futures import ThreadPoolExecutor as tred
 from os import system
 from datetime import datetime
 
-# WhatsApp Channel / Group Section (Unchanged)
+# ==========================================
+# 🔐 SECURITY LOCK SYSTEM (USERNAME & PASSWORD)
+# ==========================================
+def login_lock():
+    if 'win' in sys.platform:
+        os.system('cls')
+    else:
+        os.system('clear')
+        
+    print("\033[1;36m════════════════════════════════════════════════════════════\033[0m")
+    print(" \033[1;33m[!] THIS TOOL IS PROTECTED WITH USERNAME & PASSWORD")
+    print("\033[1;36m════════════════════════════════════════════════════════════\033[0m")
+    
+    attempts = 3
+    while attempts > 0:
+        username = input(" \033[1;37m[\033[1;32m?\033[1;37m] ENTER USERNAME : \033[1;33m")
+        password = input(" \033[1;37m[\033[1;32m?\033[1;37m] ENTER PASSWORD : \033[1;33m")
+        
+        if username == "kamal" and password == "raja":
+            print("\n \033[1;32m[✓] ACCESS GRANTED! WELCOME TO TOOL...\033[0m")
+            time.sleep(1.5)
+            break
+        else:
+            attempts -= 1
+            print(f"\n \033[1;31m[×] WRONG USERNAME OR PASSWORD! ({attempts} ATTEMPTS LEFT)\033[0m\n")
+            if attempts == 0:
+                print(" \033[1;31m[!] TOO MANY FAILED ATTEMPTS. EXITING...\033[0m")
+                sys.exit()
+
+# WhatsApp Channel / Group Section
 channel_link = "https://chat.whatsapp.com/Br0KVWVikGD4hps8FuBl6Z?s=cl&p=a&mlu=4&ilr=4"
 os.system(f"echo '{channel_link}' | termux-clipboard-set 2>/dev/null")
 print(" \x1b[1;32m[+] WhatsApp Group Link Copied to Clipboard!")
@@ -31,7 +61,7 @@ os.system(f"termux-open-url '{channel_link}'")
 
 time.sleep(3)
 
-# YouTube Channel Section (Updated to reality-voice_king_kamal)
+# YouTube Channel Section
 yt_link = "https://youtube.com/@reality-voice_king_kamal?si=LzRw8UJQSReHzHkB"
 
 print(" \x1b[1;32m[+] Opening YouTube Channel... Please Subscribe!")
@@ -106,7 +136,7 @@ def window1():
     D = f"Mozilla/5.0 (Windows NT {random.choice(['10.0', '11.0'])}; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.{latest_build}.{latest_patch} Safari/537.36"
     return random.choice([A, B, C, D])
 
-# Set window title (Updated Name)
+# Set window title
 sys.stdout.write('\x1b]2;𓆩【 TARGET 5M 👑 】𓆪 \x07')
 
 # ==========================================
@@ -420,4 +450,5 @@ def login_2(uid):
     loop += 1
 
 if __name__ == '__main__':
+    login_lock()
     BNG_71_()
